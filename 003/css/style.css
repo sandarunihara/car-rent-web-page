@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #eaeaea;
+    overflow-x: hidden;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px 100px;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    font-size: 25px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navigation a{
+    display: inline-block;
+    text-decoration: none;
+    color: #222;
+    font-size: 18px;
+    margin: 0 20px;
+    font-weight: 500;
+    padding: 6px 15px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s*var(--i));
+}
+
+.navigation a:hover,
+.navigation a.active{
+    color: #1743e3;
+}
+
+.scial-media{
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    height: 40px;
+}
+
+.scial-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transform: rotate(45deg);
+    transition: .5s;
+    opacity: 0;
+    animation: slideSci 1s ease forwards;
+    animation-delay: calc(.2s*var(--i));
+}
+.scial-media a:hover{
+    border-color: #eaeaea;
+}
+
+.scial-media a i{
+    font-size: 24px;
+    color: #eaeaea;
+    transform: rotate(-45deg);
+
+}
+.home{
+     width: 100%;
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     padding: 50px 8% 0;
+     justify-content: space-between;
+     overflow-y: hidden;
+     overflow-x: hidden;
+     
+}
+.home-content{
+    max-width: 630px;
+}
+
+.home-content h1{
+    font-size: 50px;
+    line-height: 1.2;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .5s;
+}
+
+.home-content h3{
+    font-size: 40px;
+    color: #1743e3;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .7s;
+}
+.home-content p{
+    font-size: 16px;
+    margin: 15px o 30px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: .9s;
+}
+.btn{
+    display: inline-block;
+    padding: 10px 15px;
+    background: #1743e3;
+    border: 2px solid #1743e3;
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    font-size: 16px;
+    color: #eaeaea;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-left: 20px;
+    transition: .5s;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1.1s;
+}
+.btn:hover{
+    background: transparent;
+    color: #1743e3;
+}
+.homer{
+    position: relative;
+    right: 3%;
+    width: 400px;
+    height: 400px;
+    transform: rotate(45deg);
+    
+}
+
+.homecal{
+    position: absolute;
+    background-color: #eaeaea;
+    border: 25px solid #1743e3;
+    width: 100%;
+    height: 100%;
+    right: -30%;
+    top: -30%;
+    box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+    opacity: 0;
+    animation: zoomOut 1s ease forwards;
+    animation-delay: 1.1s;
+    
+    
+}
+.homecal img{
+    position: absolute;
+    max-width: 750px;
+    margin-left: -350px;
+    margin-top: 100px;
+    transform: rotate(-45deg);
+    opacity: 0;
+    animation: car 1s ease forwards;
+    animation-delay: 1.1s;
+}
+
+.next{
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: #1743e3;
+    top: -25%;
+    right: -25%;
+    transform: rotate(45deg);
+    z-index: -1;
+    
+
+}
+
+
+/*Key frames animation*/
+
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideSci{
+    0%{
+        transform: translateX(100px) rotate(45deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0) rotate(45deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut{
+    0%{
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes car{
+    0%{
+        transform: translate(300px,-300px) scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0,0) scale(1) rotate(-45deg);
+        
+        opacity: 1;
+    }
+}
